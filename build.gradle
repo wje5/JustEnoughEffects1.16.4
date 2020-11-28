@@ -149,3 +149,14 @@ publishing {
         }
     }
 }
+
+task apiJar(type: Jar) {
+    classifier = 'api'
+    from sourceSets.main.output
+    from sourceSets.main.allSource
+    include 'com/pinball3d/effectinfo/api/**'
+}
+
+artifacts {
+    archives apiJar
+}
